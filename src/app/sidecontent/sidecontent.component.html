@@ -1,0 +1,53 @@
+<p>
+  <!--<mat-radio-group class="example-radio-group" [formControl]="mode">-->
+    <!--<label>Mode:</label>-->
+    <!--<mat-radio-button value="side">Side</mat-radio-button>-->
+
+    <!--<mat-radio-button value="over">Over</mat-radio-button>-->
+    <!--<mat-radio-button value="push">Push</mat-radio-button>-->
+  <!--</mat-radio-group>-->
+  <mat-list role="list">
+    <mat-list-item role="listitem">
+      <button (click)="onHome()" mat-raised-button color="warn">
+        HOME</button>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item role="listitem">
+      <button (click)="onCreateMeeting()" mat-raised-button color="primary">
+        CREATE MEETING</button>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+
+    <mat-list-item role="listitem">
+      <button (click)="onShowMeetings()" mat-raised-button color="primary">
+        SHOW MEETINGS</button>
+    </mat-list-item>
+    <!--<mat-divider></mat-divider>-->
+    <!--<mat-list-item role="listitem">-->
+      <!--<button (click)="onShowTasks()" mat-raised-button color="primary">-->
+        <!--SHOW TASKS</button>-->
+    <!--</mat-list-item>-->
+    <!--<mat-divider></mat-divider>-->
+    <!--<mat-list-item role="listitem">-->
+      <!--<button (click)="onShowUsers()" mat-raised-button color="primary">-->
+        <!--SHOW USERS</button>-->
+    <!--</mat-list-item>-->
+    <div *ngIf="userStatus=='offline'">
+    <mat-divider></mat-divider>
+    <mat-list-item role="listitem"> <button (click)="onSignup()" mat-raised-button color="primary">
+      SIGN UP</button></mat-list-item>
+    </div>
+    <mat-divider></mat-divider>
+    <mat-list-item role="listitem">
+    <button (click)="onLogin()" mat-raised-button color="primary">
+      LOGIN</button>
+  </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item role="listitem">
+      <button (click)="onLogout()" mat-raised-button color="primary">
+        LOGOUT</button>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+
+  </mat-list>
+</p>

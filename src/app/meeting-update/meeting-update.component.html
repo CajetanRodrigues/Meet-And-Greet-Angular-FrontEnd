@@ -1,0 +1,41 @@
+
+<form (ngSubmit)="update()" #detailCustomerForm="ngForm">
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title style="text-align: center">Create Meeting</mat-card-title>
+    <mat-card-subtitle>Please enter the details below</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content >
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Enter the Venue</mat-label>
+        <input [(ngModel)]="meeting.venue" name="venue" matInput placeholder="Placeholder">
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Enter the Title</mat-label>
+        <input [(ngModel)]="meeting.title" name="title" matInput placeholder="Placeholder">
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="example-full-width">
+        <input [(ngModel)]="meeting.meeting_date" name="meeting_date" matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button type="submit" (click)="update()" mat-raised-button color="accent">
+      UPDATE</button>
+    <button type="submit" (click)="delete()" mat-raised-button color="accent">
+      DELETE</button>
+    <button (click)="reset()" mat-raised-button color="accent">
+      RESET</button>
+  </mat-card-actions>
+</mat-card>
+</form>

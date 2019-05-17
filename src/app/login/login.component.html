@@ -1,0 +1,35 @@
+
+<form  #signupForm="ngForm" (ngSubmit)="validateUser()">
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title style="text-align: center ; color: red">{{loginMessage}}</mat-card-title>
+
+    <mat-card-title style="text-align: center">Login</mat-card-title>
+    <mat-card-subtitle>Please enter the details below</mat-card-subtitle>
+  </mat-card-header><hr>
+  <mat-card-content >
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your email</mat-label>
+        <input required [(ngModel)]="user.email" name="email" matInput placeholder="Placeholder">
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Enter the password</mat-label>
+        <input required [(ngModel)]="user.password" type="password" name="password" matInput placeholder="Placeholder">
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button [disabled]="false"  type="submit" mat-raised-button color="accent">
+      LOGIN</button>
+    <button  (click)="reset()" mat-raised-button color="accent">
+      RESET</button><br><hr>
+    <button (click)="goToSignup()" mat-raised-button color="primary">
+      Create an account </button>
+  </mat-card-actions>
+</mat-card>
+</form>

@@ -1,0 +1,57 @@
+<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
+  <mat-card>
+
+    <b>All your organised Meetings</b>
+    <div *ngFor="let meeting of meetings">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{meeting.title}}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{meeting.venue}} | {{meeting.date}}
+            </mat-panel-description>
+            <mat-panel-description>
+              <div style="margin-left: auto">
+                <button style="margin-right: 5px" (click)="updateMeeting(meeting)" mat-raised-button color="accent">
+                  UPDATE</button>
+                <button  style="margin-left: 5px"  (click)="deleteMeeting(meeting)" mat-raised-button color="warn">
+                  DELETE</button>
+              </div>
+
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <hr>
+          <b>Tasks Allocated</b>
+          <hr>
+          <button mat-raised-button color="accent" (click)="getTasksByMeetingId(meeting.id)">VIEW CREATED TASKS</button>
+
+          <mat-list >
+            <div *ngFor="let task of tasks;  let i=index">
+              {{i+1}} ]     {{task.details}}
+
+            </div>
+          </mat-list>
+          <hr>
+          <form  #addCustomerForm="ngForm">
+
+            <b>Add Task</b>
+
+            <hr>
+            <mat-form-field>
+
+              <input [(ngModel)]="task.details" name="details" matInput placeholder="Enter task details here">
+
+            </mat-form-field>
+            <mat-card-actions>
+              <button mat-raised-button color="accent"  (click)="saveAndAssignTask(meeting.id)">ADD TASK</button>
+              <button (click)="reset()"  mat-raised-button color="accent">RESET</button>
+            </mat-card-actions>
+          </form>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+
+  </mat-card>
+</div>

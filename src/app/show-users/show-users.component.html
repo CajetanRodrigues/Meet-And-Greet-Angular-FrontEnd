@@ -1,0 +1,6 @@
+<h1>All Users</h1>
+<div *ngFor="let user of users">
+  <a [routerLink]="['/user', user.id]" style="color:black">
+    {{user.id}}------{{user.email}}----{{user.role}}----{{user.password}}</a>
+  <br><br>
+</div>

@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+p,h1,h2,h3,h4,h5,h6,a,div{
+  font-family: 'Staatliches', cursive;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+}
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-radio-group {
+  display: block;
+  border: 1px solid #555;
+  margin: 20px;
+  padding: 10px;
+}
+.example-icon {
+  padding: 0 20px;
+  margin : 5px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+fa-icon{
+  margin-right: 4px;
+}
+mat-card{
+  text-align: center;
+}
